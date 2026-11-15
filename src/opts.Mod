@@ -10,13 +10,13 @@ TYPE
    Options* = POINTER TO OptionsDesc;
 
    OptionDesc* = RECORD;
-         name- : string;
-  haslongname- : BOOLEAN;
-     longname- : string;
-       hasval- : BOOLEAN;
-     required- : BOOLEAN;
-          val- : string;
-  description- : string;
+         name* : string;
+  haslongname* : BOOLEAN;
+     longname* : string;
+       hasval* : BOOLEAN;
+     required* : BOOLEAN;
+          val* : string;
+  description* : string;
           next : Option;
        setName : PROCEDURE(VAR opt: Option; name: ARRAY OF CHAR);
    setLongName : PROCEDURE(VAR opt: Option; name: ARRAY OF CHAR);
@@ -28,11 +28,11 @@ TYPE
 
     OptionsDesc* = RECORD
      add* : PROCEDURE(VAR opts: Options; VAR opt: Option);
-         first- : Option;
-    last- : Option;
-   count- : INTEGER;
+         first* : Option;
+    last* : Option;
+   count* : INTEGER;
    positionalArgs: stringArr;  (* New: positional arguments *)
-   numPositional-: INTEGER;                    (* New: count of positional args *)
+   numPositional*: INTEGER;                    (* New: count of positional args *)
    END;
 
 PROCEDURE addOpt*(VAR opts: Options; VAR opt: Option);

@@ -8,7 +8,7 @@ TYPE
   string* = POINTER TO ARRAY OF CHAR;
 
 VAR
-  argscount-: INTEGER;
+  argscount*: INTEGER;
   cur:        INTEGER;
 
 PROCEDURE Get*(): string;

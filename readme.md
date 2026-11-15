@@ -1,3 +1,24 @@
+# opts for polpo
+
+This repository continues [norayr/opts](https://github.com/norayr/opts) for
+[polpo](https://github.com/polpo-system/polpo): the upstream history first, then the commits for
+polpo. The rest of this readme is the upstream one.
+
+```
+portia.Install opts
+```
+
+On polpo, the fields are exported with `*`, as the ARM compiler has no read-only exports.
+Platform and Args come from polpo's base package voc-compat. opts reads the arguments of the
+program, so it is meant for programs made with `program.Make`, for example:
+
+    loksh program.Make testopts.Mod
+    ./testopts -m Main -s
+
+`OptsTest.Run` (polpo/test) makes TestLongOption and testopts this way and runs them.
+
+---
+
 # 🧰 opts — Command-Line Option Parser for Oberon
 
 **opts** is a lightweight, modular command-line parser written in [Oberon](https://en.wikipedia.org/wiki/Oberon_(programming_language)) using the [Vishap Oberon Compiler (VOC)](https://github.com/vishapoberon/compiler). It provides a flexible system for defining and parsing options, flags, and positional arguments in command-line Oberon programs.
